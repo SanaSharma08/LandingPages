@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+}
+.home{
+    background: linear-gradient(to bottom right, #2f3291, #353eb4, #2f3291);
+    font-family: "Josefin Sans", sans-serif;
+    color: beige;
+    padding: 30px;
+}
+.nav{
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
+    margin: auto;
+    /* padding: 20px; */
+    /* border: 2px solid white; */
+    position: relative;
+    z-index: 2;
+}
+.leftnav{
+    display: flex;
+    width: 30vw;
+    justify-content: space-evenly;
+    gap: 10px;
+    align-items: center;
+}
+.rightnav{
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+    gap: 10px;
+    align-items: center;
+}
+.logo{
+    font-weight: 700;
+    font-size: 40px;
+    border-bottom:2px solid #f19925;
+}
+.pro{
+    border-bottom:2px solid #f19925;
+    color: #7b82d8;
+    padding-bottom: 10px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* border:2px solid #f19925; */
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    /* margin: 20px; */
+}
+.lg{
+    padding: 20px;
+    grid-column: 1/3;
+    grid-row: 1/2;
+    z-index: 1;
+    /* border:2px solid #f19925; */
+}
+.lg h1{
+    margin: 0;
+    font-size: 200px;
+    position: relative;
+    z-index: 1;
+}
+
+.lg h3{
+    margin: 0;
+    font-size: 40px;
+}
+.lg button{
+    background-color: #f19925;
+    margin: 10px;
+    padding: 20px;
+    border: none;
+    border-radius: 40px;
+    color: beige;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    
+}
+.illus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    /* border:2px solid #f19925; */
+    z-index: 0;
+    
+}
+.img2{
+    background: linear-gradient(to bottom right,#3840af,#7b82d8,#8c90c4 );
+    border-radius: 700px;
+    border-right: 2px solid #c0c3e2;
+}
+.img1{
+    background: linear-gradient(to bottom left, #131553, #353eb4, #171b83,#131553 );
+    padding: 80px;
+    transform: scale(1.2);
+    border-radius: 700px;
+}
+.illus img{
+    height: 400px;
+}
+.rg{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    /* border:2px solid #f19925; */
+    margin: 10px;
+    z-index: 1;
+}
+.new{
+    color: #7b82d8;
+}
+.rg h2{
+    font-size: 40px;
+    margin: 0;
+}
+.rg h1{
+    font-size: 100px;
+    margin: 0;
+    color: #f19925;
+}
+.prevnex{
+    display: flex;
+    width: 120px;
+    justify-content: space-between;
+}
+.prev{
+    background-color: #6970d3;
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+}
+.next img{
+    width: 100%;
+}
+.next{
+    background-color: #f19925;
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .lg h1 {
+        font-size: 120px;
+    }
+
+    .rg h1 {
+        font-size: 60px;
+    }
+
+    .illus img {
+        height: 300px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .lg {
+        grid-column: 1/2;
+        text-align: center;
+    }
+
+    .illus {
+        grid-column: 1/2;
+        margin: 20px 0;
+    }
+
+    .rg {
+        grid-column: 1/2;
+        text-align: center;
+    }
+
+    .lg h1 {
+        font-size: 70px;
+    }
+
+    .lg h3 {
+        font-size: 24px;
+    }
+
+    .rg h1 {
+        font-size: 50px;
+    }
+
+    .illus img {
+        height: 250px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .leftnav, .rightnav {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .lg h1 {
+        font-size: 50px;
+    }
+
+    .rg h1 {
+        font-size: 40px;
+    }
+
+    .illus img {
+        height: 200px;
+    }
+
+    .lg button {
+        padding: 15px;
+        font-size: 12px;
+    }
+}

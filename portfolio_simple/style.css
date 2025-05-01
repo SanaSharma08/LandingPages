@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+    color: antiquewhite;
+    background-color: #394abc;
+}
+.home{
+    margin: 0;
+    background: linear-gradient(to bottom right, #394abc, #233194, #1d2881);
+    padding: 10px;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    margin: auto;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+    color: antiquewhite;
+    grid-column: 1/4;
+    grid-row: 1/2;
+}
+.leftnav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    padding: 10px;
+}
+.rightnav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+}
+.grid{
+    align-content: center;
+    width: 80vw;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-top: 20px;
+}
+.tex h3{
+    font-weight: 300;
+}
+.qoute{
+    font-weight: 300;
+    border-bottom: 2px solid #7682cf;
+    padding-bottom: 10px;
+}
+.illus{
+    position: relative;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    border-radius: 370px;
+}
+.cube-blur {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    filter: blur(20px);
+    opacity: 0.4;
+    z-index: 0;
+    transform: scale(1.3); /* slightly bigger than actual cube for nice glow */
+}
+
+.cube {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.tex h1{
+    font-size: 200px;
+    line-height: 15px;
+}
+.doe{
+    color: #5c69be;
+}
+
+.about{
+    margin: 0;
+    background: linear-gradient(to bottom left,#1d2881, #233194, #394abc);
+}
+.about h1{
+    margin: 0;
+    font-size: 50px;
+    margin-left: 100px;
+}
+.about .table{
+    display: flex;
+    width: 80vw;
+    margin: auto;
+    margin-top: 20px;
+    justify-content: space-evenly;
+    border-bottom: 2px solid #9ca2cc;
+}
+.int{
+    padding: 20px;
+}
+.aw{
+    padding: 20px;
+}
+.exb{
+    padding: 20px;
+}
+.so{
+    padding: 20px;
+}
+
+.int:hover,
+.aw:hover,
+.exb:hover,
+.so:hover {
+    color: #5c69be;
+}

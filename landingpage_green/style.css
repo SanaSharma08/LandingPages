@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+body{
+    background: linear-gradient(to right, #23524a, #6b8d5a);
+}
+.nav{
+    display: flex;
+    width: 90vw;
+    margin: auto;
+    margin-top: 10px;
+    align-items: center;
+    
+    padding: 10px;
+    justify-content: space-between;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+}
+.leftnav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: beige;
+    gap: 40px;
+}
+.leftnav .home:hover{
+    color: #edbb4c;
+}
+.rightnav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+/*LANDING HOME*/
+
+.grid{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 100vw; */
+}
+.left{
+    margin-right: 50px;
+    margin-left: 50px;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 500;
+    color: bisque;
+}
+.left h1{
+    font-size: 150px;
+    margin: 0;
+}
+.left button{
+    border: 2px solid #edbb4c;
+    background-color: #23524a;
+    padding: 15px;
+    width: 150px;
+    border-radius: 40px;
+    color: bisque;
+    font-family: "Josefin Sans", sans-serif;
+}
+.left button:hover{
+    background-color: #edbb4c;
+    transform: scale(1.1);
+}
+.cacimg{
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 4/6;
+    grid-row: 1/3;
+    position: relative;
+    background: linear-gradient(to left, #23524a,#c6e7b5 );
+    border-radius: 50px 0 0 50px;
+}
+.cacimg img{
+    height: 700px;
+    transform: scale(1.3);
+}
+.lower{
+    display: flex;
+}
+
+.smallimg{
+    border-radius: 40px 0 0 40px;
+    background-color: #edbb4c;
+
+}
+.smallimg img{
+    height: 150px;
+}
+.txt1{
+    background-color: #23524a;
+    text-align: center;
+    padding: 30px;
+    color: bisque;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 500;
+    z-index: 1;
+}
+.txt2{
+    background-color: #23524a;
+    text-align: center;
+    padding: 30px;
+    color: bisque;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 500;
+    z-index: 1;
+}
+.txt3{
+    background-color: #b7e4a1;
+    text-align: left;
+    padding: 30px;
+    color: #23524a;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 500;
+    border: 1px solid #23524a;
+    z-index: 1;
+}
