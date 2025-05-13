@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    background: linear-gradient(to bottom right, rgb(132, 156, 221),white, white);
+    padding: 20px;
+}
+
+/* NAVBAR */
+
+nav{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    max-width: 90vw;
+    margin: auto;
+    justify-content: space-between;
+}
+.leftnav,
+.rightnav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+nav span{
+    border: 2px solid #001d3d;
+    padding: 10px 20px;
+    border-radius: 40px;
+}
+.logo{
+    border: transparent;
+    font-weight: 700;
+}
+nav button{
+    color: white;
+    background-color: #001d3d;
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: 2px solid #001d3d;
+}
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+  
+/* NAVBAR ENDS */
+
+
+/* MAIN CONTENT */
+
+.hero{
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    row-gap: 50px;
+    height: 80vh;
+    margin: 20px;
+}
+
+/* FIRST ROW */
+.hero .r1{
+    display: flex;
+    justify-content: space-evenly;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+.text1{
+    font-size: 30px;
+    width: 60%;
+}
+
+/* TOP IMAGE */
+.r1 .img1{
+    
+    position: relative;
+    background-image: url(https://img.freepik.com/free-vector/dark-hand-painted-alcohol-ink-background-with-glittery-gold-elements_1048-16748.jpg);
+    border-radius: 30px;
+    width: 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+}
+.img1 .box1{
+    height: calc(100% - 20px);
+    font-size: 18px;
+    padding: 10px;
+    width:calc(50% - 20px);
+    background-color: rgb(170, 214, 240);
+    position: absolute;
+    right: 0;
+    border-radius: 20px;
+    text-align: left;
+}
+/* TOP IMAGE ENDS */
+/* FIRST ROW ENDS*/
+
+/* SECOND ROW */
+.hero .r2{
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 80px;
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+/* Calendar */
+
+.calender{
+    background-color: #f8f5f3;
+    padding: 20px;
+    border-radius: 20px;
+    height: max-content;
+    width: fit-content;
+}
+.calender span{
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    padding: 10px;
+}
+.dates :nth-child(2){
+    background-color: rgb(36, 60, 128);
+    border-radius: 10px;
+}
+.dates{
+    display: flex;
+    background-color: rgb(132, 156, 221);
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+.calender label{
+    font-size: 30px;
+    line-height: 2;
+}
+.time1 , .time2 , .time3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Calendar ends */
+
+
+/* Bottom Image */
+.r2 .img2{
+    background-image: url(https://img.freepik.com/free-vector/dark-hand-painted-alcohol-ink-background-with-glittery-gold-elements_1048-16748.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    width: 60%;
+    border-radius: 40px;
+}
+.img2 .top{
+    background-color: #ffd60a;
+    color: #001d3d;
+    /* opacity: 70%; */
+    width: 20%;
+    height: auto;
+    transform: translateX(-30px) translateY(-40px);
+    padding: 10px;
+    border-radius:20px;
+    font-size: 15px;
+}
+.img2 .bottom{
+    background-color: rgb(132, 156, 221);
+    color: #001d3d;
+    /* opacity: 70%; */
+    width: 50%;
+    height: auto;
+    padding: 10px;
+    border-radius:  20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateX(20px) translateY(30px);
+}
+.img2 .right{
+    background-color: white;
+    color: #001d3d;
+    font-size: 20px;
+    width: 60%;
+    height: auto;
+    padding: 10px;
+    border-radius:  20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.img2 .right img{
+    width: 20%;
+}
+.img2 .buttons{
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+.buttons button{
+    padding: 5px;
+    width: fit-content;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid rgb(48, 89, 202);
+    margin: 4px;
+    width: auto;
+}
+.buttons :nth-child(2){
+    background-color: #ffd60a;
+    border: transparent;
+}
+
+/* Bottom Image ends */
+/* SECOND ROW ENDS */
+
+/* === RESPONSIVE === */
+@media (max-width: 1060px){
+    .text1 {
+        width: 80%;
+        font-size: 24px;
+    }
+    .img1{
+        width: 30%;
+        height: auto;
+    }
+    .img1 .box1{
+        width: 70%;
+        font-size: 15px;
+    }
+
+    .img2 .top {
+        width: 20%;
+        height: auto;
+    }
+
+    .img2 .right {
+        width: 60%;
+        font-size: 18px;
+    }
+
+    .img2 .bottom {
+        width: 50%;
+    }
+
+    .img2 .buttons {
+        display: flex;
+        flex-direction: row;
+        width: 10%;
+        flex-wrap: wrap;
+    }
+    /* .buttons button{
+        white-space: normal;
+        word-break: break-word;
+    } */
+}
+
+@media only screen and (max-width: 881px) {
+    nav {
+        /* flex-direction: column;
+        align-items: flex-start;
+        gap: 10px; */
+    }
+    .hero{
+        row-gap: 10%;
+    }
+    .text1 {
+        width: 100%;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .r1{
+        height: 80vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .r1 .img1{
+        height: 50%;
+        width: 60%;
+    }
+    .img1 .box1{
+        background: linear-gradient(to bottom right,rgb(170, 214, 240),rgb(48, 89, 202),#ffd60a  );
+        color: #001d3d;
+    }
+    .r2{
+        /* flex-direction: column;
+        align-items: center;
+        gap: 10%;
+        justify-content: space-evenly; */
+        gap: 40px !important;
+    }
+    .calender{
+        background-color: #f8f5f3;
+        padding: 20px;
+        border-radius: 20px;
+        height: max-content;
+        width: fit-content;
+    }
+    .dates span{
+        font-size: 20px;
+    }
+    .calender label{
+        font-size: 20px;
+        line-height: 2;
+    }
+    .img2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 30px;
+        border-radius: 20px; 
+    }
+
+    .img2 .top{
+        background-color: #ffd60a;
+        color: #001d3d;
+        /* opacity: 70%; */
+        width: auto;
+        height: max-content;
+        transform: translateX(0) translateY(0);
+        font-size: 12px;
+        position: static;
+    }
+    .img2 .bottom{
+        background-color: #001d3d;
+        color: #ffd60a;
+        /* opacity: 70%; */
+        width: auto;
+        height: max-content;
+        padding: 10px;
+        border-radius:  20px;
+        font-size: 12px;
+        transform: translateX(0) translateY(0);
+        position: static;
+    }
+    .img2 .right{
+        background-color: white;
+        color: #001d3d;
+        font-size: 12px;
+        width: 100%;
+        font-size: 12px;
+        height: max-content;
+        transform: translateX(0) translateY(0);
+        position: static;
+    }
+    .img2 .right img{
+        width: 20%;
+    }
+    .img2 .buttons{
+        display: none;
+    }
+    .extra-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: white;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 10px;
+        z-index: 100;
+      }
+    
+      .menu-toggle {
+        display: inline-block;
+      }
+    
+      .rightnav {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    
+      .rightnav.show-menu .extra-links {
+        display: flex;
+      }
+    
+      .leftnav span:not(.logo) {
+        display: none;
+      }
+}
+  
+
+@media (max-width: 590px) {
+    .hero {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .rightnav {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    
+    .r1, .r2{
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .text1 {
+        width: 100%;
+        text-align: center;
+        line-height: 1.2;
+    }
+    .text1 img{
+        /* removing arrow image */
+        display: none;
+    }
+    .img1 .box1 {
+        width: auto;
+        text-align: center;
+        position: static;
+        height: max-content;
+        padding: 20px;
+    }
+    .img1 {
+        background-position: center;
+    }
+    .calender {
+        width: 60%;
+    }
+    
+    .img2 {
+        background-color: #001d3d;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        width: 90% !important;
+    }
+    
+    .img2 .top,
+    .img2 .right,
+    .img2 .bottom,
+    .img2 .buttons {
+        position: static;
+        width: 90%;
+        margin: 10px 0;
+    }
+    
+
+}
