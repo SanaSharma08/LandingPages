@@ -4,12 +4,13 @@ body{
     padding: 0;
 }
 .home{
+    position: relative;
     padding: 30px;
-    width: 100%;
     background-image: url("https://static.vecteezy.com/system/resources/previews/023/010/420/large_2x/the-delicious-burger-in-the-black-background-with-ai-generated-free-photo.jpg");
     background-repeat: no-repeat;
+    background-size: cover;
     /* background-size: 100%; */
-    background-position: center left;
+    background-position:center center;
 
 }
 .navbar{
@@ -28,7 +29,6 @@ body{
     font-family: "Boldonse", system-ui;
     font-size: 20px;
     font-weight: 300;
-
 }
 .navbar .sign{
     padding: 10px;
@@ -41,13 +41,17 @@ body{
     font-weight: 200;
 
 }
+.menu-toggle{
+    display: none;
+}
 
 .homecontent{
     margin-left: 5%;
     margin-top: 50px;
-    padding: 20px;
+    padding: 40px;
     width: 40%;
     color: beige;
+    background-color: rgba(0, 0, 0, 0.486);
     /* border: 2px solid; */
 }
 .homecontent h1{
@@ -84,4 +88,69 @@ body{
     font-size: 15px;
     background-color: #fb5607;
     border: transparent;
+}
+.homecontent img{
+    width: 200px;
+}
+
+@media only screen and (max-width:1296px) {
+    .homecontent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin:auto;
+        padding: 2px;
+        margin-top: 50px;
+        width: 90vw;
+        text-align: center;
+    }
+    .homecontent h1{
+        font-family: "Boldonse", system-ui;
+        font-size: 50px;
+        /* border: 2px solid; */
+        margin: 0;
+    }
+    .homecontent p{
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+    }
+    .homecontent img{
+        width: 100px;
+    }
+
+    .menu-toggle{
+        display: inline-block;
+    }
+    .homenav , .about , .delights , .recipe , .contact , .blog , .sign {
+        display: none;
+    }
+    .navbar {
+        justify-content: space-between;
+    }
+    .navbar .logo{
+        width: 20%;
+        font-family: "Boldonse", system-ui;
+        font-size: 10px;
+        font-weight: 300;
+    }
+    .homecontent .buttons .discover{
+        padding: 10px;
+        color: #fb5607;
+        border-radius: 40px;
+        width: 40%;
+        font-size: 10px;
+        background-color: beige;
+        border: transparent;
+    }
+    .homecontent .buttons .order{
+        padding: 10px;
+        color: beige;
+        border-radius: 40px;
+        width: 40%;
+        font-size: 10px;
+        background-color: #fb5607;
+        border: transparent;
+    }
+
 }

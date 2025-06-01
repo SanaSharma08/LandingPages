@@ -3,6 +3,7 @@
     --body-color:#fef9ef;
     --blue-font:#3b4ca4;
     --lighter-blue:#6d74de;
+    --pista: #668406;
 }
 body{
     background-color: var(--body-color);
@@ -10,19 +11,36 @@ body{
 nav{
     /* border: 2px solid; */
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
+    width: 90vw;
+    margin: auto;
     align-items: center;
-    padding: 10px;
-    gap: 36px;
+    gap: 20px;
+    /* border: 2px solid; */
 }
 nav .logo{
-    font-family: "Playwrite AU SA", cursive;
-    font-size: 20px;
+    font-family: "Boldonse", system-ui;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
     font-weight: 300;
+}
+nav .links{
+    font-family: "Boldonse", system-ui;
+    font-size: 10px;
+    font-style: normal;
+    display: flex;
+    gap: 12px;
 }
 .home{
     /* background-color: aqua; */
     display: flex;
+    width: 90vw;
+    height: 60vh;
+    margin-top: 20px !important;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-between;
     line-height: 1.6;
     align-items: center;
@@ -30,19 +48,24 @@ nav .logo{
     z-index: 1;
 }
 .text{
-    margin: 10px;
     color: var(--blue-font);
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: column;
 }
-.text h1{
+.text :nth-child(1){
     font-family: "Boldonse", system-ui;
     font-weight: 400;
     font-style: normal;
-    font-size: 80px;
+    font-size: 70px;
     margin: 0;
 }
-.text h3{
+.sub {
     font-family: "Boldonse", system-ui;
     font-size: 20px;
+    color: var(--pista);
 }
 .text .heaven{
     font-size: 40px;
@@ -50,19 +73,24 @@ nav .logo{
     color: var(--lighter-blue);
 }
 .text .flavor{
+    font-family: "Boldonse", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
     color: transparent;
     -webkit-text-stroke: 2px #1A237E;
     margin: 0;
 }
-.text h1 img{
-    height: 100px;
+.flavor img{
+    height: 50px;
 }
 .illus{
-    width: 50%;
+    width: 40%;
     text-align: right;
     position: relative;
     z-index: 0;
 }
 .illus img{
-    width: 100%;
+    width: 100%; 
+    transform: scale(1.2);
 }

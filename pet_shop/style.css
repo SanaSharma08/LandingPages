@@ -1,0 +1,22 @@
+nav{
+    border: 2px solid black;
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+}
+ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+ul button{
+    border-radius: 10px;
+    padding: 5px 10px;
+    border: transparent;
+    background-color: rgb(230, 16, 123);
+    color: beige;
+}

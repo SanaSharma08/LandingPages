@@ -28,8 +28,12 @@ nav{
     justify-content: space-between;
     /* border: 2px solid; */
 }
+.menu-toggle {
+    display: none;
+  }
 nav .logo{
     font-size: 36px;
+    color: var(--red1);
 }
 nav .links{
     display: flex;
@@ -43,12 +47,25 @@ nav .links :nth-child(1){
     font-weight: 400;
 
 }
+
+@media only screen and (max-width: 1092px) {
+    .links :nth-child(1) , .links :nth-child(2) , .links :nth-child(3) , .links :nth-child(4) , .links :nth-child(5) , .links :nth-child(6) , .links :nth-child(7) {
+        display: none;
+    }
+    .menu-toggle {
+        display: inline-block;
+      }
+    nav{
+        justify-content: space-between;
+    }
+}
 /* NAVBAR ENDS */
 
 /* Home Page */
 
 .home{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     max-width: 90vw;
     margin: auto;

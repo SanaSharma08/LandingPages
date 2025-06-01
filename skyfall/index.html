@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyfall</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        .main{
+            background: radial-gradient(circle, #c6c9cc 0%, #8b9eac 70%, #698793 100%);
+            position: relative;
+            height: 600px;
+            padding-top: 60px;
+        }
+        .circle{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            border-radius: 50%;
+            background-image: url(https://wallpapers.com/images/hd/mountain-aesthetic-lbkeexvloblvyruz.jpg);
+            background-size: cover;
+            background-position: center center;
+            transform: rotate(180deg);
+            position:relative ;
+            z-index: 0;
+        }
+        .circle img{
+            width:20%;
+            height: 20%;
+            position: absolute;
+            top: 25%;
+            transform: rotate(309deg);
+        }
+        .mountain{
+            background-image: url(https://pngimg.com/d/mountain_PNG30.png);
+            width: 100%;
+            height: 300px;
+            z-index: 1;
+            filter: saturate(90%) hue-rotate(30deg) !important;
+            position: absolute;
+            bottom: -6vh;
+        }
+        .tflex{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            z-index: 2;
+            bottom: -3vh;
+            align-items: center;
+            justify-content: center;
+            background-color: #798a967a;
+        }
+        .tflex :nth-child(1){
+            margin: 0;
+            font-family: "Permanent Marker", cursive;
+            font-weight: 400;
+            font-size: 50px;
+            color: beige;
+        }
+        .tflex :nth-child(2){
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            font-weight: bolder;
+            color: beige;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="circle">
+            <img src="https://png.pngtree.com/png-vector/20240705/ourmid/pngtree-silhouette-of-jumping-person-vector-png-image_7064252.png" alt="" class="fall">
+        </div>
+        <div class="mountain">
+        </div>
+        <div class="tflex">
+            <p>SKYFALL</p>
+            <p>- MUSIC ARTWORKS -</p>
+        </div>
+    </div>
+</body>
+</html>
