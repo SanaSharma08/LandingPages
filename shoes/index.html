@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        .main{
+            position: relative;
+            width: 100vw;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .bord{
+            border: 2px solid black;
+        }
+        .left{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100%;
+            background-color:#f55d76;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .right{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background-color: #fdfdfd;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .c1{
+            width: 500px;
+            height: 500px;
+            z-index: 1;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .lc1{
+            border: 60px solid #fdfdfd;
+            top: 20%;
+            left: 35%; 
+        }
+        .rc1{
+            border: 60px solid #f55d76;
+            top: 20%;
+            left: -26%;
+        }
+        .txt{
+            line-height: 1;
+            font-family: "Poppins", sans-serif;
+            width: 500px;
+            position: absolute;
+            z-index: 2;
+            top: 20%;
+            left: 40%;
+            padding: 10px;
+        }
+        h1{
+            margin: 0;
+        }
+        .txt :nth-child(1){
+            font-size: 60px;
+            color: #f55d76;
+        }
+        span{
+            font-size: 40px;
+        }
+        .txt :nth-child(2){
+            font-size: 80px;
+        }
+        .l1 , .l2{
+            width: 10%;
+            border:2px solid #f55d76;
+        }
+        .l2{
+            width: 20%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        p{
+            line-height: 1.4;
+        }
+        button{
+            font-family: "Poppins", sans-serif;
+            font-weight: bold;
+            padding: 10px 30px;
+            border-radius: 30px;
+            border: transparent;
+            position: absolute;
+            right: 30px;
+            background-color: #f55d76;
+            color: #fdfdfd;
+        }
+        .shoe{
+            position: relative;
+            z-index: 3;
+            width: 800px;
+            top:8%;
+            left:20%;
+        }
+        nav{
+            font-family: "Poppins", sans-serif;
+            position: relative;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            gap: 24px;
+            width: 90vw;
+            margin: auto;
+            padding: 10px;
+        }
+        nav :nth-child(1){
+            color: #f55d76;
+        }
+        .search{
+            width: 25px;
+        }
+        .logo{
+            position: absolute;
+            z-index: 5;
+            width: 100px;
+            left: 2%;
+            top: 1%;
+            filter: invert(100%);
+        }
+
+        /*Responsiveness*/
+
+        @media (min-width: 1198px) and (max-width: 1558px) {
+            .main{
+                height: 100vh;
+            }
+            .c1{
+                width: 350px;
+                height: 350px;
+            }
+            .lc1{
+                left: 30%; 
+            }
+            .rc1{
+                left: -32%;
+            }
+            .txt{
+                width: 450px;
+                left: 35%;
+            }
+            .txt :nth-child(1){
+                font-size: 40px;
+            }
+            span{
+                font-size: 25px;
+            }
+            .txt :nth-child(2){
+                font-size: 60px;
+            }
+            p{
+                font-size: 14px;
+            }
+            button{
+                font-size: 14px;
+                padding: 8px 20px;
+            }
+            .shoe{
+                width: 600px;
+                top:8%;
+                left:15%;
+            }
+            nav{
+                gap: 18px;
+                width: 90vw;
+                margin: auto;
+                font-size: 14px;
+                padding: 10px;
+            }
+            .search{
+                width: 20px;
+            }
+            .logo{
+                width: 80px;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .main{
+                height: 90vh;
+            }
+            .c1{
+                width: 300px;
+                height: 300px;
+            }
+            .lc1{
+                border: 40px solid #fdfdfd;
+            }
+            .rc1{
+                border: 40px solid #f55d76;
+            }
+            .txt{
+                width: 350px;
+                left: 40%;
+            }
+            .txt :nth-child(1){
+                font-size: 40px;
+            }
+            span{
+                font-size: 20px;
+            }
+            .txt :nth-child(2){
+                font-size: 60px;
+            }
+            p{
+                font-size: 12px;
+                line-height: 1.4;
+            }
+            button{
+                padding: 5px 20px;
+                font-size: 12px;
+            }
+            .shoe{
+                width: 550px;
+            }
+            nav{
+                gap: 18px;
+                font-size: 12px;
+            }
+            nav :nth-child(1){
+                color: #f55d76;
+            }
+            .search{
+                width: 20px;
+            }
+            .logo{
+                width: 80px;
+            }
+        }
+        @media (min-width: 768px) and (max-width: 991px) {
+            .main{
+                height: 80vh;
+            }
+            .c1{
+                width: 250px;
+                height: 250px;
+            }
+            .lc1{
+                border: 40px solid #fdfdfd;
+                left: 25%;
+            }
+            .rc1{
+                border: 40px solid #f55d76;
+                left: -37.5%;
+            }
+            .txt{
+                width: 250px;
+                left: 40%;
+            }
+            .txt :nth-child(1){
+                font-size: 30px;
+            }
+            span{
+                font-size: 10px;
+            }
+            .txt :nth-child(2){
+                font-size: 40px;
+            }
+            p{
+                font-size: 10px;
+                line-height: 1.4;
+            }
+            button{
+                padding: 5px 12px;
+                font-size: 10px;
+            }
+            .shoe{
+                top: 5%;
+                left: 10%;
+                width: 450px;
+            }
+            nav{
+                gap: 14px;
+                font-size: 10px;
+            }
+            nav :nth-child(1){
+                color: #f55d76;
+            }
+            .search{
+                width: 18px;
+            }
+            .logo{
+                width: 60px;
+            }
+        }
+        @media (min-width: 481px) and (max-width: 767px) {
+            .main{
+                height: 70vh;
+            }
+            .c1{
+                width: 200px;
+                height: 200px;
+            }
+            .lc1{
+                border: 40px solid #fdfdfd;
+                left: 20%;
+            }
+            .rc1{
+                border: 40px solid #f55d76;
+                left: -43%;
+            }
+            .txt{
+                width: 180px;
+                left: 40%;
+            }
+            .txt :nth-child(1){
+                font-size: 20px;
+            }
+            span{
+                font-size: 6px;
+            }
+            .txt :nth-child(2){
+                font-size: 30px;
+            }
+            p{
+                font-size: 8px;
+                line-height: 1.2;
+            }
+            .l1{
+                margin-top: 10px;
+            }
+            button{
+                padding: 3px 8px;
+                font-size: 8px;
+            }
+            .shoe{
+                top: 12%;
+                left: 8%;
+                width: 350px;
+            }
+            nav :nth-child(1),
+            nav :nth-child(2),
+            nav :nth-child(3),
+            nav :nth-child(4),
+            nav :nth-child(6){
+                display: none;
+            }
+            .logo{
+                width: 30px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img src="https://cdn.freebiesupply.com/logos/large/2x/nike-4-logo-black-and-white.png" alt="logo" class="logo">
+        <nav>
+            <div><b>Home</b></div>
+            <div>Shop</div>
+            <div>Sale</div>
+            <div>Contact</div>
+            <div class="menu-toggle">&#9776;</div>
+            <img src="https://img.icons8.com/ios7/600/search.png" alt="search" class="search">
+        </nav>
+        <div class="left">
+            <div class="c1 lc1"></div>
+        </div>
+        <div class="right">
+            <div class="c1 rc1"></div>
+            <div class="txt">
+                <h1>Nike</h1>
+                <h1>Air Max <span>2090</span></h1>
+                <div class="l1"></div>
+                <div class="l2"></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto sit eligendi reprehenderit. Vero quas voluptatem aliquid quidem harum. Sequi libero harum aspernatur ullam, veniam inventore. Repudiandae, impedit? Culpa accusantium nobis numquam eos rem ipsa iusto quibusdam ducimus iure reiciendis voluptatibus suscipit consequatur a sunt, distinctio repellat asperiores ea odio minus necessitatibus quos? Voluptate rerum maxime, quisquam quae aspernatur cumque deserunt id omnis, ipsam, mollitia odit reiciendis in consequuntur atque ipsum?</p>
+                <button>Know More</button>
+            </div>
+        </div>
+        <img src="https://static.vecteezy.com/system/resources/previews/036/625/147/non_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png" alt="" class="shoe">
+    </div>
+</body>
+</html>

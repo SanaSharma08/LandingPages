@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natgeo</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        nav , .mid{
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            color: white;
+        }
+        nav{
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%);
+            width: 90vw;
+            z-index: 1;
+        }
+        .mid{
+            gap: 16px;
+        }
+        .mid :nth-child(2){
+            border: 2px solid #fddc04;
+            padding: 1px 5px;
+        }
+        .logo{
+            width: 150px;
+        }
+        .search{
+            max-width: 25px;
+            filter: invert(1);
+        }
+
+        .main{
+            position: relative;
+            z-index: 0;
+            background-color: #292921;
+        }
+        .main img{
+            width: 100%;
+        }
+
+        .p2 , .p4 , .p5{
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #292921;
+            padding: 50px 30px;
+        }
+        .box{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .photo{
+            width: 45%;
+        }
+        .box img{
+            border-radius: 60px;
+            width: 100%;
+            transform: translateY(-20vh);
+        }
+        .txt{
+            font-family: "Poppins", sans-serif;
+            width: 50%;
+            color: white;
+        }
+        .txt p{
+            margin: 0;
+            line-height: 1.2;
+            font-size: 1vw;
+        }
+        .l1{
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            align-items: center;
+            justify-content: left;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 2vw;
+        }
+        .l1 :nth-child(1){
+            border: 2px solid #fddc04;
+            padding: 3px 8px;
+        }
+        .l1 :nth-child(2),
+        .l1 :nth-child(3){
+            background-color: #fddc04;
+            padding: 3px 8px;
+        }
+
+        .p3{
+            width: 100%;
+            height: 40vh;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/037/283/972/non_2x/ai-generated-colorful-tropical-background-with-neon-flamingos-free-photo.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center top;
+            filter: grayscale(1);
+        }
+
+        .p6{
+            width: 100%;
+            height: 40vh;
+            background-image: url('https://i.pinimg.com/736x/fa/6e/cf/fa6ecf1c46069f8b38dc198263cbb235.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            filter: grayscale();
+        }
+
+        footer{
+            font-family: "Poppins", sans-serif;
+            font-size: 1vw;
+            color: white;
+            width: 100%;
+            background-color: #292921;
+            padding: 20px 0px;
+        }
+        .footer{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            justify-content: space-around;
+            width: 100%;
+        }
+        .content{
+            border-left: 2px solid white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+            padding-left: 50px;
+        }
+        footer img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="https://www.disneyadvertising.com/wp-content/uploads/2023/09/das_nat-geo_nat-geo_logo_KO-uai-720x405-1.png" alt="logo" class="logo">
+        <div class="mid">
+            <div>COMMUNITY PHOTOS</div>
+            <div>CHANELS</div>
+            <div>PROGRAMME TV</div>
+        </div>
+        <img src="https://img.icons8.com/ios7/600/search.png" alt="search icon" class="search">
+    </nav>
+
+    <!-- MAIN PAGE -->
+    <div class="main">
+        <img src="https://i.pinimg.com/736x/a1/88/3e/a1883edd240f8578ca3594471705aa7f.jpg" alt="poster pic">
+    </div>
+
+    <!-- LEOPARD PAGE 2 -->
+    <div class="p2">
+        <div class="box">
+            <div class="photo">
+                <img src="https://i.pinimg.com/736x/ca/77/56/ca7756af79dab7de0abd6300ef2f6bb5.jpg" alt="leopard">
+            </div>
+            <div class="txt">
+                <div class="l1">
+                    <div>01</div>
+                    <div>Carnivores</div>
+                    <div>leopard</div>
+                </div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus odit atque assumenda. Suscipit dolore minima nihil praesentium quam accusamus odio tenetur aliquam quibusdam sunt? Quos nulla dolores cupiditate esse incidunt reprehenderit hic temporibus nesciunt delectus a voluptatem magnam doloribus animi suscipit non, ex tenetur quas ipsa molestias quibusdam. Eveniet labore fugiat quaerat deserunt quisquam quae tempora laborum officiis blanditiis illum nobis atque saepe quidem magni, praesentium nulla deleniti perferendis voluptatibus dicta consequuntur, provident omnis incidunt laudantium! Tempora repellat praesentium nemo amet excepturi totam veniam magnam id ea labore reiciendis dignissimos minus soluta ratione, illo, voluptatibus, illum dolorem sed delectus quis vitae cum blanditiis natus. Repellat doloremque quas, ipsa earum rem dolorum mollitia! Veniam libero eaque nostrum ab distinctio aut deserunt, voluptates aliquid aperiam! Voluptate, atque. Quibusdam nemo eum aliquam corrupti iure fugit inventore, impedit corporis hic, vero illo at recusandae modi provident voluptatum! Blanditiis quam laboriosam cum temporibus fugit perspiciatis quod facilis laborum, ad delectus odit amet culpa ipsa distinctio libero? Aliquid itaque quia odit tenetur beatae quod adipisci. Quam aut facere ut consequuntur magnam. Laudantium ipsum quaerat atque voluptatem enim ratione officia. Sed quas officia rem odio aliquid temporibus, deleniti ipsum? Facere tempore porro nostrum ratione maxime commodi repellendus?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flamingo Seperator Page 3 -->
+    <div class="p3"></div>
+
+    <!-- Lion PAGE 4 -->
+    <div class="p4">
+        <div class="box">
+            <div class="txt">
+                <div class="l1">
+                    <div>02</div>
+                    <div>Carnivores</div>
+                    <div>Lion</div>
+                </div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus odit atque assumenda. Suscipit dolore minima nihil praesentium quam accusamus odio tenetur aliquam quibusdam sunt? Quos nulla dolores cupiditate esse incidunt reprehenderit hic temporibus nesciunt delectus a voluptatem magnam doloribus animi suscipit non, ex tenetur quas ipsa molestias quibusdam. Eveniet labore fugiat quaerat deserunt quisquam quae tempora laborum officiis blanditiis illum nobis atque saepe quidem magni, praesentium nulla deleniti perferendis voluptatibus dicta consequuntur, provident omnis incidunt laudantium! Tempora repellat praesentium nemo amet excepturi totam veniam magnam id ea labore reiciendis dignissimos minus soluta ratione, illo, voluptatibus, illum dolorem sed delectus quis vitae cum blanditiis natus. Repellat doloremque quas, ipsa earum rem dolorum mollitia! Veniam libero eaque nostrum ab distinctio aut deserunt, voluptates aliquid aperiam! Voluptate, atque. Quibusdam nemo eum aliquam corrupti iure fugit inventore, impedit corporis hic, vero illo at recusandae modi provident voluptatum! Blanditiis quam laboriosam cum temporibus fugit perspiciatis quod facilis laborum, ad delectus odit amet culpa ipsa distinctio libero? Aliquid itaque quia odit tenetur beatae quod adipisci. Quam aut facere ut consequuntur magnam. Laudantium ipsum quaerat atque voluptatem enim ratione officia. Sed quas officia rem odio aliquid temporibus, deleniti ipsum? Facere tempore porro nostrum ratione maxime commodi repellendus?</p>
+            </div>
+            <div class="photo">
+                <img src="https://i.pinimg.com/736x/fd/c9/45/fdc9459e8fcf8f7fea14a93844b9a709.jpg" alt="lion">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="p5">
+        <div class="box">
+            <div class="photo">
+                <img src="https://i.pinimg.com/736x/a7/1e/2f/a71e2f0dc0776227034ddc6b600e7479.jpg" alt="panther" id="otter">
+            </div>
+            <div class="txt">
+                <div class="l1">
+                    <div>03</div>
+                    <div>Carnivores</div>
+                    <div>Panther</div>
+                </div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus odit atque assumenda. Suscipit dolore minima nihil praesentium quam accusamus odio tenetur aliquam quibusdam sunt? Quos nulla dolores cupiditate esse incidunt reprehenderit hic temporibus nesciunt delectus a voluptatem magnam doloribus animi suscipit non, ex tenetur quas ipsa molestias quibusdam. Eveniet labore fugiat quaerat deserunt quisquam quae tempora laborum officiis blanditiis illum nobis atque saepe quidem magni, praesentium nulla deleniti perferendis voluptatibus dicta consequuntur, provident omnis incidunt laudantium! Tempora repellat praesentium nemo amet excepturi totam veniam magnam id ea labore reiciendis dignissimos minus soluta ratione, illo, voluptatibus, illum dolorem sed delectus quis vitae cum blanditiis natus. Repellat doloremque quas, ipsa earum rem dolorum mollitia! Veniam libero eaque nostrum ab distinctio aut deserunt, voluptates aliquid aperiam! Voluptate, atque. Quibusdam nemo eum aliquam corrupti iure fugit inventore, impedit corporis hic, vero illo at recusandae modi provident voluptatum! Blanditiis quam laboriosam cum temporibus fugit perspiciatis quod facilis laborum, ad delectus odit amet culpa ipsa distinctio libero? Aliquid itaque quia odit tenetur beatae quod adipisci. Quam aut facere ut consequuntur magnam. Laudantium ipsum quaerat atque voluptatem enim ratione officia. Sed quas officia rem odio aliquid temporibus, deleniti ipsum? Facere tempore porro nostrum ratione maxime commodi repellendus?</p>
+            </div>
+        </div>
+    </div>
+    <div class="p6"></div>
+    <footer>
+        <div class="footer">
+            <img src="https://www.disneyadvertising.com/wp-content/uploads/2023/09/das_nat-geo_nat-geo_logo_KO-uai-720x405-1.png" alt="logo">
+            <div class="content">
+                <div>NEWSLETTER</div>
+                <div>CHANELS</div>
+                <div>EXPEDITION</div>
+                <div>SUBSCRIBE></div>
+            </div>
+            <p>Copyright &copy; 2025 @natgeo.in</p>
+        </div>
+    </footer>
+</body>
+</html>
