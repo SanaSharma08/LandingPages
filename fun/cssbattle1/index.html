@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>L-Pattern</title>
+  <style>
+    body {
+      background: #ffc72c; /* yellowish outer background from image */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .pattern {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-top: 20px solid;
+      border-left: 20px solid;
+    }
+
+    /* Custom classes for each layer */
+    .layer1 {
+      width: 200px;
+      height: 200px;
+      border-color: orange;
+    }
+
+    .layer2 {
+      width: 160px;
+      height: 160px;
+      border-color: navy;
+      top: 20px;
+      left: 20px;
+    }
+
+    .layer3 {
+      width: 120px;
+      height: 120px;
+      border-color: orange;
+      top: 40px;
+      left: 40px;
+    }
+
+    .layer4 {
+      width: 80px;
+      height: 80px;
+      border-color: navy;
+      top: 60px;
+      left: 60px;
+    }
+
+    .layer5 {
+      width: 40px;
+      height: 40px;
+      border-color: orange;
+      top: 80px;
+      left: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="pattern">
+    <div class="layer layer1"></div>
+    <div class="layer layer2"></div>
+    <div class="layer layer3"></div>
+    <div class="layer layer4"></div>
+    <div class="layer layer5"></div>
+  </div>
+</body>
+</html>
