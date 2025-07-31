@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <ul class="links">
+                <li>NEW RELEASES</li>
+                <li>3D ILLUS</li>
+                <li>DIGITAL</li>
+                <li>ART</li>
+                <li>CUSTOMIZE</li>
+            </ul>
+            <ul class="icons">
+                <li><img src="https://cdn-icons-png.flaticon.com/512/6522/6522516.png" alt="profile" id="profile"></li>
+                <li><img src="https://www.freeiconspng.com/thumbs/cart-icon/cart-icon-14.png" alt="cart" id="cart"></li>
+            </ul>
+        </nav>
+        <div class="carousel">
+            <div class="card" id="c1">
+                <div class="txt">
+                    <h1>ARMAR-G</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ratione labore saepe, nostrum quibusdam architecto neque, obcaecati officiis reiciendis impedit perspiciatis.</p>
+                </div>
+            </div>
+            <div class="card" id="c2">
+                <div class="txt">
+                    <h1>ALTER 3</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ratione labore saepe, nostrum quibusdam architecto neque, obcaecati officiis reiciendis impedit perspiciatis.</p>
+                </div>
+            </div>
+            <div class="card" id="c3">
+                <div class="txt">
+                    <h1>AMECA</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ratione labore saepe, nostrum quibusdam architecto neque, obcaecati officiis reiciendis impedit perspiciatis.</p>
+                </div>
+            </div>
+            <div class="card" id="c4">
+                <div class="txt">
+                    <h1>APOLLO</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ratione labore saepe, nostrum quibusdam architecto neque, obcaecati officiis reiciendis impedit perspiciatis.</p>
+                </div>
+            </div>
+            <div class="card" id="c5">
+                <div class="txt">
+                    <h1>ATLAS</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ratione labore saepe, nostrum quibusdam architecto neque, obcaecati officiis reiciendis impedit perspiciatis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="left">
+                <h1>AI ROBOTS</h1>
+                <h3>PUBLISHED</h3>
+                <h3>NOV DE,2025</h3>
+                <h3>MORE DIGITAL ART:</h3>
+                <h3>BEHANCE MORE</h3>
+            </div>
+            <div class="right">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam reprehenderit animi sint expedita quo ad facere at aspernatur consectetur accusantium modi, doloremque, aliquid architecto aperiam dicta eos ab dolorem consequuntur. Deleniti asperiores fugit, rem quia ipsum, doloribus sit praesentium perferendis voluptatibus impedit at itaque. Unde.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const reset=()=>{
+            let cards=Array.from(document.querySelectorAll(".card"));
+            for(const card of cards){
+                // Reset card styles to their original CSS values
+                card.style.width = "";
+                
+                const txtDiv = card.querySelector(".txt");
+                if (txtDiv) {
+                    // Reset text div styles to their original CSS values
+                    txtDiv.style.display = "";
+                    txtDiv.style.opacity = "";
+                    txtDiv.style.marginTop = "";
+                }
+            }
+            main.style.backgroundColor = "";
+        }
+        //one function to tackle all card clicks, catering to common expansion related properties & we simply use an array to change bg-color into custom bg-rest all properties are same, so we can create a single function to cater to that.
+        const showCard=(event)=>{
+            reset(); // reset all cards then expand current card so that it looks like only a specific card expands and rest go back to original config.
+            const target=event.currentTarget;
+            target.style.width="400px";
+            let txtDiv = target.querySelector(".txt");
+            if(txtDiv){
+                txtDiv.style.display="flex";
+                txtDiv.style.flexDirection="column";
+                txtDiv.style.textAlign="left";
+                txtDiv.style.justifyContent="flex-end";
+                txtDiv.style.marginTop = "auto";
+                txtDiv.style.width="70%";
+                txtDiv.style.padding="20px";
+            }
+            const cardId=target.id;
+            if(cardBackgrounds[cardId]){
+                main.style.backgroundColor=cardBackgrounds[cardId];
+            }
+        }
+        const cardBackgrounds = {
+            "c1": "#621423",
+            "c2": "#697800",
+            "c3": "#bc5264",
+            "c4": "#714c83",
+            "c5": "#5f8697"
+        };
+        const allCards = document.querySelectorAll(".card");
+        const main=document.querySelector(".main");
+        //applying event listener to all cards
+        allCards.forEach(card=>{
+            card.addEventListener("click",showCard)
+        })
+    </script>
+</body>
+</html>
