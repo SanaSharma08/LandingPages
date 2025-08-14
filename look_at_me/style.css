@@ -4,7 +4,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   height: 100vh;
+  width: 100vw;
   margin: 0;
   background-color:#fefefe;
 }
@@ -13,11 +15,12 @@ body {
     height: 100%;
     position: relative;
     z-index: 1;
+    /* border: 2px solid; */
 }
 .circle{
     background-color: #d3d3d3;
-    height: 100%;
-    width: 100% ;
+    height: 100vh;
+    width: 100vh ;
     border-radius: 50%;
     overflow: hidden;
     transform: translateX(-40%);
@@ -29,7 +32,10 @@ h1 , p {
     line-height: 1;
 }
 h1{
-    font-size: 60px;
+    font-size: 5vw;
+}
+p{
+    font-size: 1.4vw;
 }
 button{
     padding: 10px 20px;
@@ -40,24 +46,27 @@ button{
     font-family: "Poppins", sans-serif;
 }
 .right{
+    /* border: 2px solid; */
     font-family: "Poppins", sans-serif;
-    width: 50%;
+    width: 40%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
     text-align: left;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
+    position: relative;
+    z-index: 1;
 }
 
 .look-at-me {
   transition: transform 3s ease-out; /* Smooths the rotation */
   position: absolute;
   z-index: 5;
-  top: 20%;
-  left: 15%;
-  width: 800px;
-  filter: grayscale() saturate(100) sepia(30%);
+  top: 30%;
+  left: 0%;
+  width: 700px;
 }
 .bubbles{
     position: absolute;
@@ -70,12 +79,12 @@ button{
     transform: rotate(90deg);
 }
 #bubble2{
-    width: 400px;
+    width: 300px;
     top: 10%;
-    right: 10%;
+    right: 20%;
 }
 #bubble3{
     width: 300px;
-    top: 75%;
+    bottom: 0%;
     right: 50%;
 }
