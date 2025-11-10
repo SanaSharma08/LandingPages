@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --base-col:#131313;
+    --washed-grey:#5b5b5b;
+    --grey:#9f9f9f;
+    --primary-font:"Poppins", sans-serif;
+    --logo-font:"DM Sans", sans-serif;
+}
+body{
+    background-color: var(--base-col);
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    color: var(--washed-grey);
+    font-family: var(--primary-font);
+    padding: 0px 10px;
+    font-weight: bold;
+}
+#logo{
+    width: 40px;
+    filter: invert();
+}
+#links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: 50%;
+}
+#links :first-child{
+    color: var(--grey);
+}
+li{
+    list-style: none;
+}
+#icons{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 18px;
+}
+#icons img{
+    width: 25px;
+}
+#cart{
+    filter: invert();
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left , .right{
+    width: 20%;
+}
+#headphone{
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    opacity: 80%;
+}
+.mid{
+    width: 60%;
+    height: 800px;
+    border: 2px solid white;
+    position: relative;
+}
+#h1{
+    font-size: 10vw;
+    position: absolute;
+    z-index: 3;
+    left: 20%;
+    bottom: 30%;
+    color: white;
+    font-family: var(--logo-font);
+}
+#h2{
+    font-size: 10vw;
+    position: absolute;
+    z-index: 0;
+    left: 1.5%;
+    bottom: 15%;
+    color: var(--grey);
+    font-family: var(--logo-font);
+}

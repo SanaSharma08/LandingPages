@@ -1,0 +1,104 @@
+
+
+
+@media (max-width: 1024px){
+    /* 
+Footer */
+.footer-col1 h1{
+    font-size: 24px;
+}
+.footer-col1 p{
+    font-size: 14px;
+}
+.footer-tags-row h2{
+    font-size: 12px;
+}
+.footer-col1{
+    width: 40%;
+    color: white;
+}
+.footer-col3{
+    width: 50%;
+    color: white;
+}
+.footer-links img{
+    width: 20px;
+    height: 20px;
+}
+.footer-col3 h2{
+    margin: 0;
+    font-size: 24px;
+}
+footer form input{
+    width: 150px;
+}
+footer button{
+    font-size: 12px;
+}
+}
+
+/* Done here---------------------------------------------------------------------------- */
+@media (max-width: 576px){
+    /* 
+Footer */
+
+footer{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    
+}
+.footer-col1{
+    width: 100%;
+    border: 2px solid blue;
+}
+.footer-col3{
+    width: 100%;
+    color: white;
+    padding: 0;
+    border: 2px solid yellow;
+}
+.footer-tags{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+.footer-tags-row{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    font-size: 12px;
+}
+
+.footer-links{
+    justify-content: left;
+}
+.footer-links img{
+    width: 20px;
+    height: 20px;
+}
+.footer-col3 h2{
+    margin: 0;
+}
+.footer-col3{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+footer form input{
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 5px;
+    color: white;
+}
+footer button{
+    padding: 5px;
+    border: none;
+    background-color: #f07d37;
+    color: white;
+}
+}

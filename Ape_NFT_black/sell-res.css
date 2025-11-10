@@ -1,0 +1,148 @@
+/* Sell Page */
+.Sell{
+    height: 600px;
+    padding-top: 30px;
+    position: relative;
+    /* border: 2px solid red; */
+}
+.Sell p , .Sell h2{
+    margin: 0;
+}
+.sell-p-head{
+    text-align: center;
+    color: #913903;
+}
+.sell-h2-head{
+    text-align: center;
+    color: white;
+}
+.sell-long{
+    border: 1px solid white;
+    position: absolute;
+    z-index: 3;
+    border-radius: 50px;
+}
+.sell-long1{
+    width: 50px;
+    height: 120px;
+    top: 5%;
+    left: 10%;
+}
+.sell-long2{
+    width: 50px;
+    height: 20px;
+    top: 20px;
+    left: 15%;
+}
+.sell-long3{
+    width: 30px;
+    height: 30px;
+    top: 15%;
+    right: 30%;
+    
+}
+.sell-circle{
+    position: absolute;
+    z-index: 0;
+    width: 400px;
+    height: 400px;
+    background-color: #61616359;
+    border-radius: 50%;
+    filter: blur(60px);
+    top: 10%;
+    left: 45%;
+}
+.carousel {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  z-index: 20;
+}
+.card-caraousel {
+  padding: 20px;
+  width: 50px;
+  height: 300px;
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 1s ease-in-out;
+}
+.card-caraousel:hover {
+  transform: scale(1.05);
+  transition: all 0.8s ease-out;
+}
+.card-caraousel .txt-caraousel {
+  display: none;
+}
+.card-caraousel h1 {
+  font-size: 24px;
+}
+.card-caraousel p {
+  font-size: 12px;
+}
+#c1sc {
+  background-image: url("https://i.pinimg.com/1200x/71/1c/2b/711c2b4ffa6af383fa83b80d0e1e9386.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+#c2sc {
+  background-image: url("https://i.pinimg.com/736x/3e/74/a5/3e74a5a20462ffa8932eebd0a40823de.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+#c3sc {
+  
+  background-image: url("https://i.pinimg.com/736x/8e/46/ad/8e46add2943dc97f69b8b37f15cc0f29.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+#c4sc {
+  background-image: url("https://i.pinimg.com/1200x/f7/ee/5b/f7ee5bdddadfbafb76e4d2e2d3e870d1.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+
+/* Done till here ----------------------------------------------------------------------------- */
+@media (max-width: 576px) {
+.sell-long1{
+    width: 20px;
+    height: 60px;
+}
+.sell-long2{
+    width: 30px;
+    height: 10px;
+}
+.sell-long3{
+    width: 10px;
+    height: 10px;
+}
+.carousel {
+  gap: 12px;
+}
+.card-caraousel {
+  padding: 10px;
+  border-radius: 30px;
+}
+.card-caraousel:hover {
+  transform: scale(1.05);
+  transition: all 0.8s ease-out;
+}
+.card-caraousel .txt-caraousel {
+  display: none;
+}
+.card-caraousel h1 {
+  font-size: 14px;
+}
+.card-caraousel h2 {
+  font-size: 14px;
+}
+.card-caraousel p {
+  font-size: 10px;
+}
+}

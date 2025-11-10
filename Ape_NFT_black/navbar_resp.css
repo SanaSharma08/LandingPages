@@ -1,0 +1,184 @@
+/* ==================================== */
+/* 🚀 Existing NAV Styles (Large Screen) */
+/* ==================================== */
+
+nav{
+    color: white;
+    width: calc(100%-20px);
+    /* Changed justify-content to space-between for better spacing when hamburger is hidden */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 10px;
+    margin: auto;
+    /* Removed gap from nav since space-between is used, or adjust as needed */
+    position: relative;
+    z-index: 10; /* Ensure nav is on top */
+    /* border: 2px solid red; */
+}
+
+/* We combine links, search, and icons into .nav-menu on large screens */
+.nav-menu {
+    display: flex; /* Keep them horizontal */
+    align-items: center;
+    width: 75%;
+    justify-content: space-around;
+    font-size: 14px;
+    gap: 18px; /* Added gap here for spacing between elements */
+}
+
+/* Search Bar */
+nav form{
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #7d7d80;
+}
+nav form input{
+    border: none;
+    background-color: transparent;
+    color: white;
+    width: 140px;
+}
+nav form button{
+    border: none;
+    background-color: transparent;
+}
+nav form button svg{
+    color: #7d7d80;
+}
+
+/* Links */
+.links{
+    /* Adjusted width and alignment for better flow within .nav-menu */
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Use gap instead of justify-content: space-between if width is reduced */
+}
+.links a{
+    color: white;
+    text-decoration: none;
+}
+
+/* Icons */
+nav .icons{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: #7d7d80;
+}
+
+/* 🍔 Hamburger Icon Base (Hidden on large screens) */
+.hamburger-menu {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 100; /* Highest z-index to be clickable */
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 20px;
+    height: 1px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out; /* Smooth transition for X animation */
+    background-color: white; /* Use white to match the navbar color */
+}
+
+
+/* ==================================== */
+/* 📱 Media Query (Small Screen Styles) */
+/* ==================================== */
+
+@media screen and (max-width: 768px) {
+    /* 1. Modify Nav Container for small screen */
+    nav {
+        /* Ensure the logo and hamburger button are spaced out */
+        justify-content: space-between; 
+        padding: 10px 20px; /* Add some side padding */
+    }
+    nav .logo{
+    font-size: 12px;
+    }
+    /* 2. Show the Hamburger Icon */
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* 3. Hide Navigation Menu by default */
+    .nav-menu {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align contents to the left */
+        
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%; /* Position right below the navbar */
+        
+        /* IMPORTANT: Choose a background color */
+        background-color: #1a1a1a; /* Example dark background to match white text */
+        
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        z-index: 50; /* Above regular content, below hamburger icon */
+        padding: 15px 0;
+    }
+
+    /* 4. Style for the Active/Open Menu */
+    .nav-menu.active-menu {
+        display: flex; /* Make the menu visible when active */
+    }
+    
+    /* Adjust internal elements to stack properly */
+    .nav-menu .searchbar,
+    .nav-menu .links,
+    .nav-menu .icons {
+        width: 90%;
+        margin: 5px auto;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-menu .searchbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    nav form input{
+        width: 60%;
+    }
+
+    .nav-menu .links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    /* Ensure the search bar takes full width of its container and looks good */
+    nav form {
+        width: 100%;
+        margin-top: 5px;
+    }
+    
+    /* === Hamburger to 'X' Animation Styles === */
+    
+    /* 1. First Bar: Rotates and moves to form the top half of the 'X' */
+    .hamburger-menu.active-menu .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    /* 2. Second Bar: Hides completely */
+    .hamburger-menu.active-menu .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    /* 3. Third Bar: Rotates and moves to form the bottom half of the 'X' */
+    .hamburger-menu.active-menu .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

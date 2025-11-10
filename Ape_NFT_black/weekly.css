@@ -1,0 +1,182 @@
+/* Weekly */
+/* Items Page */
+.Weekly{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* border: 2px solid red; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#week-head-p{
+    color: #d55c1b;
+    text-align: center;
+    margin: 0;
+}
+#week-head-h2{
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+#week-head2-h2{
+    color: #f3ab25;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+#week-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* Item Card Styles */
+.weekly-card {
+    background-color: #212121; /* Dark background for the card */
+    border: 1px solid #7d7d80;
+    border-radius: 12px;
+    padding: 10px;
+    overflow: hidden;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    justify-content: left;
+    /* height: 150px; */
+}
+.weekly-card:hover{
+    transform: scale(1.02);
+}
+
+.weekly-container img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.weekly-details {
+    padding: 5px 0;
+    position: relative; /* For likes positioning */
+    /* border: 2px solid; */
+    width: 70%;
+}
+
+.floor-p-container{
+    margin: 0;
+    color: #a0a0a0;
+    font-size: 0.8em;
+}
+
+.weekly-h{
+    margin: 4px 0 10px 0;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.bid-container {
+ /* Use a bright color for price */
+    color: #d55c1b;
+    font-weight: bold;
+}
+.price-hike {
+ /* Use a bright color for price */
+    color: lawngreen;
+    font-weight: bold;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    /* Item Card Styles */
+.weekly-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: left;
+    padding-top: 20px;
+    /* height: 150px; */
+}
+.weekly-container{
+    width: 80%;
+    height: 150px;
+}
+.weekly-container img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.weekly-details {
+    padding: 5px;
+    position: relative; /* For likes positioning */
+    
+    width: 80%;
+}
+
+.floor-p-container{
+    margin: 0;
+    color: #a0a0a0;
+    font-size: 0.8em;
+}
+
+.weekly-h{
+    margin: 4px 0 4px 0;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.bid-container {
+ /* Use a bright color for price */
+    color: #d55c1b;
+    font-weight: bold;
+    font-size: 14px;
+}
+.price-hike {
+ /* Use a bright color for price */
+    color: lawngreen;
+    font-weight: bold;
+    margin: 0;
+    font-size: 12px;
+}
+}
+
+/* Done till here----------------------------------------------------------------------------- */
+
+
+/* Mobile Layout (2 rows) */
+/* Max width for mobile phones, e.g., up to 576px */
+@media (max-width: 576px) {
+    /* Item Card Styles */
+
+#week-cards{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+}
+.weekly-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 18px;
+    justify-content: space-between;
+    height: 120px;
+    padding: 5px;
+}
+.weekly-card:hover{
+    transform: scale(1.02);
+}
+.weekly-container{
+    height: 80%;
+    width: 40%;
+}
+
+.weekly-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+}

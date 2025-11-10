@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html{
+    scroll-behavior: smooth;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* Ensure no scrolling is caused by children pushing past the edge */
+    overflow-x: hidden; 
+}
+body{
+    background-color: #16151b;
+    overflow-x: hidden;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+button{
+    font-family: "Poppins", sans-serif;
+}
+/* NAVBAR */
+/* nav{
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    gap: 18px;
+    position: relative;
+    z-index: 1;
+} */
+/* Search Bar */
+/* nav form{
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 20px;
+    color: #7d7d80;
+} */
+/* nav form input{
+    border: none;
+    background-color: transparent;
+    color: white;
+} */
+/* nav form button{
+    border: none;
+    background-color: transparent;
+} */
+/* nav form button svg{
+    color: #7d7d80;
+    
+} */
+/* Links */
+/* .links{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+/* .links a{
+    color: white;
+    text-decoration: none;
+} */
+/* Icons */
+/* nav .icons{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: #7d7d80;
+} */
+
+/* HOME CONTENT */
+
+
+
+/* APE IMAGE SECTION */
+
+
+/* Gradients & shapes */
+.cir1{
+    width: 400px;
+    height: 400px;
+    background-color: #2b2a30;
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    top: -90px;
+    left: -90px;
+    z-index: 0;
+}
+.cir2{
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    background-color: #6469bb88;
+    border-radius: 50%;
+    filter: blur(80px);
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+}
+
+
+/* Companies */
+.companies{
+    margin-top: 20px;
+    padding: 10px;
+    /* border: 2px solid red; */
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+.row img{
+    width: 10vw;
+    filter: grayscale() invert();
+}
+
+
+
+/* Collections */
+.Collections{
+    text-align: center;
+    margin-top: 30px;
+    position: relative;
+    /* border: 2px solid red; */
+}
+#coll-head-p{
+    color: #d55c1b;
+}
+.Collections h2{
+    margin: 0;
+    color: white;
+}
+/* Container for the entire section */
+.carousel-container {
+    display: flex;
+    /* align-items: center; */
+    position: relative; /* Needed to position arrows */
+    padding: 40px 0;
+    width: 100%;
+    /* height: 500px; */
+    /* background-color: #121212;  */
+    /* Dark background color */
+}
+
+/* The horizontal list of cards */
+.card-list {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Makes it snap to cards */
+    -webkit-overflow-scrolling: touch; /* For smoother iOS scrolling */
+    gap: 30px; /* Space between cards */
+    padding: 50px 50px; /* Space for the arrows to not overlap content */
+    /* Hide scrollbar for a cleaner look (optional) */
+    align-items: center;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.card-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* Individual Card Styling */
+.card {
+    flex-shrink: 0; /* Prevents cards from shrinking */
+    scroll-snap-align: center; /* Snap cards to the center of the viewport */
+    width: 400px;
+     /* Fixed width for each card */
+    height: 400px;
+    background-color: #833737;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+.card .live-button{
+    background: rgba(19, 18, 18, 0.527);
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+}
+.card.is-active .live-button{
+    background-color: #d55c1b;
+    border: none;
+}
+/* Taller/Dominant Style for the Middle Card */
+.card.is-active {
+    height: 450px;
+    transform: scale(1.05);
+    margin-top: -40px;
+    margin-bottom: -40px;
+    opacity: 1; /* Fully opaque */
+}
+
+/* Navigation Arrow Styling (for visual appearance) */
+.nav-button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(19, 18, 18, 0.527);
+    color: rgb(190, 189, 189);
+    border: 1px solid;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+
+/* NFT BACKGROUNDS */
+.c1{
+    background: url("https://i.pinimg.com/1200x/f7/ee/5b/f7ee5bdddadfbafb76e4d2e2d3e870d1.jpg");
+    background-size: cover;
+    background-position: top center;
+}
+.c2{
+    background: url("https://i.pinimg.com/1200x/7f/d2/77/7fd277462b14cb94daa1dee45e6e6aaf.jpg");
+    background-size: cover;
+    background-position: top center;
+}
+.c3{
+    background: url("https://i.pinimg.com/736x/f7/90/9d/f7909db2bb24abb6971fb517ea094cb6.jpg");
+    background-size: cover;
+    background-position: top center;
+}
+.c4{
+    background: url("https://i.pinimg.com/736x/67/97/27/6797273c091ab09421b49884691f467d.jpg");
+    background-size: cover;
+    background-position: top center;
+}
+.c5{
+    background: url("https://i.pinimg.com/736x/10/25/c4/1025c4d537a8608a83403356888f8796.jpg");
+    background-size: cover;
+    background-position: top center;
+}
+.c6{
+    background: url("https://i.pinimg.com/736x/ff/21/4c/ff214c9eaad998a3e934a6e9e83099c2.jpg");
+    background-size: cover;
+    background-position: top center;
+}
+.c7{
+    background: url("https://i.pinimg.com/1200x/95/be/21/95be21803caaa31d74cca6e523388cee.jpg");
+    background-size: cover;
+    background-position: top center;
+}
+/* Collection base black shadow */
+.coll-grad{
+    background-color: rgba(0, 0, 0, 0.911);
+    filter: blur(40px);
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    z-index: 11;
+}
+
+
+
+/* Items Page */
+.Items{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* border: 2px solid red; */
+}
+#item-head-p{
+    color: #d55c1b;
+    text-align: center;
+    margin: 0;
+}
+#item-head-h2{
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+#item-buttons{
+    width: calc(100%-20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* border: 2px solid blue; */
+    
+    
+}
+#item-buttons button{
+    background-color: transparent;
+    border: 1px solid #7d7d80;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Item Card Styles */
+.item-card {
+    background-color: #212121; /* Dark background for the card */
+    border: 1px solid #7d7d80;
+    border-radius: 12px;
+    padding: 10px;
+    overflow: hidden;
+    color: white;
+    cursor: pointer;
+}
+.item-card:hover{
+    transform: scale(1.02);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.card-details {
+    padding: 5px 0;
+    position: relative; /* For likes positioning */
+}
+
+.title-p {
+    margin: 0;
+    color: #a0a0a0;
+    font-size: 0.8em;
+}
+
+.title-h {
+    margin: 4px 0 10px 0;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.price-container {
+    display: inline-block;
+}
+
+.price-eth {
+ /* Use a bright color for price */
+    color: #d55c1b;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.likes-container {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: #a0a0a0;
+    font-size: 0.9em;
+}
+/* Active Button State */
+#item-buttons button.active {
+    background-color: #d55c1b; /* Highlight for the active button */
+    border-color: #d55c1b;
+    color: white;
+}
+#load-more-btn{
+    font-size: 12px;
+}
+
+/* Remove the temporary border */
+#item-cards{
+    /* border: 2px solid white; */
+    width: 90%; 
+    margin: 0 auto 30px auto; /* Add margin at the bottom for the button */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    transition: grid-template-columns 0.3s; /* Smooth transition */
+}
+
+/* Tablet Layout (2 rows of 3 columns) */
+/* Max width for tablets, e.g., up to 1024px */
+@media (max-width: 1024px) {
+    #item-cards {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+        width: 95%; 
+    }
+}
+/* Mobile Layout (2 rows of 1 column) */
+/* Max width for mobile phones, e.g., up to 576px */
+@media (max-width: 576px) {
+    #item-cards {
+        grid-template-columns: 1fr; /* 1 column */
+        gap: 10px;
+        width: 90%;
+    }
+    #item-buttons{
+    flex-wrap: wrap;  
+}
+    #item-buttons button{
+        font-size: 10px;
+    }
+}
+
+/* Styling for the Load More / Show Less Button */
+.load-more-style {
+    display: block; /* Make it take full width */
+    margin: 30px auto; /* Center it horizontally */
+    padding: 12px 30px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid #7d7d80;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.2s;
+}
+
+.load-more-style:hover {
+    background-color: #f07d37;
+}
+
+
+
+/* 
+Footer */
+
+footer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 30px;
+    /* border: 2px solid red; */
+    
+}
+.footer-col1{
+    width: 30%;
+    color: white;
+}
+.footer-col1 h1{
+    margin: 0;
+}
+.footer-col3{
+    width: 60%;
+    color: white;
+    padding-left: 20px;
+}
+.footer-tags{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+.footer-tags-row{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+.footer-tags-row h2{
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.footer-links{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 12px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.footer-links img{
+    width: 30px;
+    height: 30px;
+}
+.footer-h2{
+    font-size: 24px;
+}
+.footer-col3 h2{
+    margin: 0;
+}
+.footer-col3{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+footer form input{
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 5px;
+    color: white;
+}
+footer button{
+    padding: 5px;
+    border: none;
+    background-color: #f07d37;
+    color: white;
+}
