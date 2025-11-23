@@ -16,6 +16,9 @@ nav{
     z-index: 10; /* Ensure nav is on top */
     /* border: 2px solid red; */
 }
+nav .logo{
+    padding-left: 30px;
+}
 
 /* We combine links, search, and icons into .nav-menu on large screens */
 .nav-menu {
@@ -104,6 +107,7 @@ nav .icons{
     }
     nav .logo{
     font-size: 12px;
+    padding: 0;
     }
     /* 2. Show the Hamburger Icon */
     .hamburger-menu {
