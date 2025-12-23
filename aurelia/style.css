@@ -6,6 +6,7 @@
 
 .main{
     background-color: navy;
+    overflow: hidden;
 }
 
 /* NAVBAR STARTS */
@@ -67,18 +68,16 @@ nav button:hover{
     font-weight: 600;
     font-style: normal;
     position: absolute;
-    width: 100%;
+    width: max-content;
     font-size: 18px;
     left:0;
     bottom: 0;
     padding: 10px 0;
-    transform-origin: bottom left;
-    transform: rotate(3deg) translateY(0px);
+    transform: rotate(3deg) translateY(120px) translateX(-200px);
     background-color: var(--neon);
     color: black;
     z-index: 10;
     overflow: hidden;
-    text-align: center;
 }
 .home .band h1 {
     white-space: nowrap; /* Prevent wrapping */

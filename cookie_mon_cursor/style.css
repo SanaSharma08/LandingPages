@@ -1,0 +1,98 @@
+/* The key here is using position: absolute for the pupils so we can move them around based on the mouse coordinates. */
+
+/* We will use a clip-path to create a black semi-circle (the open mouth) and animate it so it looks like he's snapping shut. */
+
+body {
+  background-color: #0062ad;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background-color: #f3ecd9;
+  padding: 20px;
+  width: 300px;
+  text-align: left;
+  font-family: sans-serif;
+  /* Updated cursor with a backup cookie icon link */
+  /* This creates a 32x32 cookie emoji cursor instantly */
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' style='font-size:30px'><text y='35'>🍪</text></svg>") 16 16, auto;
+  
+  transition: transform 0.1s ease;
+}
+
+
+.eye-container {
+  background-color: #0062ad;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.eye {
+  width: 100px;
+  height: 100px;
+  background: #f3ecd9;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pupil {
+  width: 35px;
+  height: 35px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.info {
+  position: relative;
+  overflow: hidden; /* Keeps the mouth inside the card */
+  padding-bottom: 40px;
+}
+
+.mouth {
+  position: absolute;
+  bottom: -50px; /* Start hidden below the card */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 80px;
+  background-color: #333; /* Inside of the mouth */
+  border-radius: 0 0 100px 100px; /* Half-circle shape */
+  transition: bottom 0.2s ease-in-out;
+}
+.tongue{
+  width: 70px;
+  height: 40px;
+  border-radius: 50% 50% 20% 20%;
+  background-color: red;
+  margin: auto;
+  position: absolute;
+  bottom: 10%;
+  left: 25%;
+}
+
+/* When hovering the card, bring the mouth up and snap it! */
+.card:hover .mouth {
+  bottom: 10px;
+  animation: snap 0.3s infinite alternate;
+}
+
+.card:active {
+  /* Shrink the card slightly when "bitten" (clicked) */
+  transform: scale(0.98);
+}
+
+@keyframes snap {
+  0% { transform: translateX(-50%) scaleY(1); }
+  100% { transform: translateX(-50%) scaleY(0.2); } /* The "Chomp" action */
+}
