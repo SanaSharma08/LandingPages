@@ -1,0 +1,21 @@
+.roles-section{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.roles-grid-container{
+    border: 2px solid red;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    grid-row: 100%;
+}
+.roles-grid-card{
+    height: 400px;
+    border: 2px solid yellow;
+    border-radius: 18px;
+    background: url("https://i.pinimg.com/1200x/ff/04/9c/ff049cdc9d0f08e998462a6d209d2566.jpg");
+    background-position: center bottom;
+    background-size: cover
+}

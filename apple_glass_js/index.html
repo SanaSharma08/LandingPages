@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- To convert this React component to vanilla HTML, CSS, and JavaScript, we will move the logic from React's state hooks into a standard JavaScript render function and use DOM manipulation. -->
+     <!-- Instead of useState, we use a simple global variable activeIndex and manually call updateCarousel() whenever it changes.
+     React uses a Virtual DOM to update only changed elements. In the vanilla JS version, we are clearing the innerHTML and rebuilding the list. For a small carousel, this is perfectly fine.
+     onClick in React becomes .onclick or addEventListener in vanilla JS. -->
+  <div class="carousel-container">
+  <div class="carousel-stage" id="carousel-stage">
+    <!-- card structure defined in js for DOM Manipulation -->
+  </div>
+
+  <div class="carousel-controls">
+    <button id="prev-btn" class="nav-btn">‹</button>
+    
+    <div class="pagination-indicators" id="pagination-dots">
+      </div>
+
+    <button id="next-btn" class="nav-btn">›</button>
+  </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
