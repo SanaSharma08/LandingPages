@@ -1,0 +1,101 @@
+
+:root {
+    --bg-color: #050505;
+    --card-width: 160px;
+    --card-height: 200px;
+    --radius: 650px; 
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    color: white;
+    font-family: sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+}
+
+.carousel-track {
+    position: absolute;
+    top: 5%; 
+    width: var(--card-width);
+    height: var(--card-height);
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card {
+    position: absolute;
+    width: var(--card-width);
+    height: var(--card-height);
+    border-radius: 28px;
+    background-size: cover;
+    background-position: center;
+    transform-origin: center var(--radius);
+    transition: transform 0.8s, filter 0.8s, scale 0.8s;
+    filter: brightness(0.3) blur(1px);
+    scale: 0.8;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* The Focused State */
+.card.active {
+    filter: brightness(1.1) blur(0);
+    scale: 1.15;
+    z-index: 100;
+}
+
+.content {
+    z-index: 10;
+    text-align: center;
+    margin-top: 220px;
+    max-width: 450px;
+    pointer-events: none; /* Allows scrolling through the text */
+}
+
+h1 { font-size: 3rem; margin: 0; font-weight: 500; }
+p { color: #666; font-size: 1rem; line-height: 1.6; margin: 15px 0; }
+
+.btn-join {
+    pointer-events: all;
+    padding: 14px 32px;
+    border-radius: 40px;
+    border: none;
+    background: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.btn-join:hover { scale: 1.05; }
+
+.nav-controls {
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
