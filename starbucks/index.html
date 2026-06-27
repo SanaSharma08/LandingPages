@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks</title>
+    <meta name="description" content="Starbucks Corporation is an American multinational chain of coffeehouses and roastery reserves headquartered in Seattle, Washington. It is the world's largest coffeehouse chain. As of 2021, the company had 32,660 locations worldwide.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --base-color: #082125;
+            --accent-color:#00704A;
+            --text-green:#03694b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--base-color);
+            overflow-x: hidden;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            margin: auto;
+            margin-bottom: 50px;
+            
+        }
+        #links {
+            display: flex;
+            list-style-type: none;
+            justify-content: space-between;
+            gap: 4rem;
+            color: white;
+        }
+        #links li {
+            cursor: pointer;
+        }
+        #nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        #cart-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 9999px;
+            cursor: pointer;
+        }
+        #cart-icon {
+            width: 1.5rem;
+            filter: invert();
+        }
+        #profile-photo {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+        }
+        .home-flex {
+            width: 100%;
+            height: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem;
+            gap: 1rem;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        .home-flex .left {
+            width: 50%;
+            height: 100%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+        #home-head {
+            font-size: 1.2rem;
+            color: var(--text-green);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        #home-head-title {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        #home-head-title span {
+            color: var(--text-green);
+        }
+        #home-sub-head {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        #home-para {
+            width: 70%;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        #home-price-flex {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        #home-price-flex :nth-child(2) {
+            font-size: 1.6rem;
+            color: var(--accent-color);
+        }
+        #home-cart-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1rem;
+            width: 50%;
+            border: none;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 9999px;
+            cursor: pointer;
+            margin-bottom: 4rem;
+        }
+        #home-cart-icon {
+            width: 1.2rem;
+            filter: invert();
+        }
+        #home-coffees-hover {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1rem;
+            background-color: var(--accent-color);
+            border-radius: 0px 40px 40px 0px;
+            
+        }
+        .coffee-hover {
+            height: 200px;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .coffee-hover:hover {
+            transform: translateY(-10px) scale(1.5);
+            border-radius: 50%;
+            transition: all 0.9s ease;
+        }
+
+        .home-flex .right {
+            width: 50%;
+            height: 100%;
+            background-image: url("https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee-PNG-High-Quality-Image.png");
+            background-size: cover;
+            background-position: center;
+            
+            flex: 1;
+            position: relative;
+        }
+        #beans-bg {
+            position: absolute;
+            z-index: 10;;
+            height: 100%;
+            width: 100%;
+            right: 0;
+            object-fit: contain;
+        }
+        #home-left-img-base {
+            background-color: var(--accent-color);
+            height: 100%;
+            width: 60%;
+            position: absolute;
+            right: 0;
+            z-index: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            border-radius: 50px 0px 0px 50px;
+
+        }
+        #home-left-img-base h1 {
+            font-size: 6rem;
+            color: white;
+            padding: 0.2rem;
+            transform: rotate(-90deg);
+        }
+        #home-left-img-base h1:nth-child(2) {
+            transform: rotate(-90deg) translateY(-80px);
+            opacity: 0.5;
+        }
+        #coffee-home-big{
+            position: absolute;
+            height: 80%;
+            right: 70%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .p2 {
+            width: 100%;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+        }
+        .p2 img {
+            position: absolute;
+            z-index: 2;
+            height: 100%;
+            
+        }
+        .p2-content {
+            position: absolute;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .p2-content span{
+            color: #9c074f;
+        }
+        .p2-content-base {
+            position: absolute;
+            transform: scale(1.3);
+            opacity: 0.2;
+            z-index: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .p2 h1 {
+            font-size: 12vw;
+            color: white;
+        }
+
+        /* Popular Section Styles */
+        .popular-section {
+            padding: 5rem 2rem;
+            text-align: center;
+            background: url("https://freepngimg.com/save/10743-coffee-beans-png/1596x1010");
+            background-size: contain;
+            height: 100%;
+            width: 100%;
+        }
+        .popular-tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 2rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .product-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            background: white;
+            border-radius: 20px;
+            padding: 1rem;
+            width: 250px;
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            background-color: #d19385;
+            transition: all 0.3s ease;
+        }
+        .product-card img {
+            height: 150px;
+            margin-top: -60px; /* Pulls image up like the design */
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3));
+        }
+        .card-info h3 {
+            color: var(--accent-color);
+            margin: 1rem 0;
+        }
+        .card-info p {
+            color: #555;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .add-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Branches Section */
+        .branches {
+            display: flex;
+            padding: 5rem 2rem;
+            background: #051618;
+        }
+        .side-title {
+            writing-mode: vertical-rl;
+            text-align: center;
+            transform: rotate(180deg);
+            background: white;
+            color: var(--accent-color);
+            padding: 2rem 1rem;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        .branches-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-left: 3rem;
+            flex-grow: 1;
+        }
+        .branch-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover; /* Ensures image isn't squashed */
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .branch-item:hover .branch-img {
+            transform: scale(1.05);
+            border-color: var(--accent-color);
+        }
+
+        .branch-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 10px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .branch-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .branch-text h4 { color: var(--accent-color); }
+        .branch-text p { color: #ccc; font-size: 0.8rem; }
+
+        /* Footer & Contact */
+        .scrolling-text {
+            width: 200%;
+            background: var(--accent-color);
+            color: white;
+            padding: 1rem;
+            font-weight: bold;
+            font-size: 1.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            transform: translateX(-30px);
+        }
+        footer{
+            overflow: hidden;
+        }
+        .footer-flex {
+            display: flex;
+            gap: 2rem;
+            padding: 3rem 2rem;
+        }
+        .contact-box h3{
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        .contact-box, .thanks-box {
+            flex: 1;
+            padding: 2rem;
+            border-radius: 30px;
+        }
+        .contact-box { background: white; }
+        .thanks-box { 
+            background: var(--accent-color); 
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        .contact-box input {
+            width: 100%;
+            margin: 0.5rem 0 1rem;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .arrow-circle {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            color: var(--accent-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .bottom-bar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: var(--accent-color);
+            border-radius: 50px;
+            color: white;
+            height: 400px;
+            margin-bottom: 40px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .brand img {
+            width: 150px;
+            margin-right: 1rem;
+        }
+        .subscribe {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+            width: 40%;
+        }
+        .subscribe p {
+            font-weight: bold;
+        }
+        .sub-input {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sub-input input {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 20px;
+            width: 200px;
+        }
+        .sub-input button {
+            border: 2px solid white;
+            background: transparent;
+            width: 50px;
+            height: 50px;
+            font-weight: bolder;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* --- CAROUSEL COMPONENT --- */
+
+.menu-carousel {
+    padding: 4rem 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Category Tabs */
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    background: var(--accent-color);
+    width: fit-content;
+    margin: 0 auto 4rem;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+.tab {
+    padding: 10px 30px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    background: white;
+    color: var(--accent-color);
+    border-radius: 50px; /* Perfect pill shape */
+}
+
+/* Carousel Layout & Alignment */
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.menu-viewport {
+    width: 1175px; /* (250px card + 25px gap) * 4 items + correction */
+    overflow: hidden;
+    padding: 80px 10px 40px; /* Space for image overlap and shadow */
+}
+
+.menu-slider {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    gap: 25px;
+}
+
+/* Glassmorphism Menu Items */
+.menu-item {
+    flex: 0 0 250px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.menu-item img {
+    width: 140px;
+    height: auto;
+    margin-top: -75px; /* Pulls image above the card top */
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.4));
+    transition: transform 0.4s ease;
+}
+
+.menu-item h3 {
+    color: white;
+    margin: 15px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* Active State Styles */
+.menu-item.active-slide {
+    background: rgba(0, 112, 74, 0.2);
+    border: 1px solid var(--accent-color);
+    transform: scale(1.08);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    z-index: 10;
+}
+
+.menu-item.active-slide img {
+    transform: translateY(-10px) rotate(5deg) scale(1.1);
+}
+
+/* Item Content & Options */
+.menu-item .options {
+    margin-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-item .options span {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #ccc;
+}
+
+.menu-item .options i {
+    font-style: normal;
+    color: white;
+}
+
+/* Buttons and Arrows */
+.card-add-btn {
+    margin-top: 18px;
+    width: 100%;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-item.active-slide .card-add-btn {
+    background: white;
+    color: var(--accent-color);
+}
+
+.nav-arrow {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 20;
+}
+
+.nav-arrow:hover {
+    background: #008f5d;
+}
+
+/* Tablets & Small Desktops */
+    @media (max-width: 1024px) {
+        nav {
+            margin-bottom: 20px;
+        }
+        #links {
+            gap: 2rem;
+        }
+        #links li {
+            cursor: pointer;
+            font-size: 12px;
+        }
+        #cart-icon {
+            width: 1rem;
+            filter: invert();
+        }
+        #profile-photo {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+        }
+        .home-flex {
+            height: 700px;
+            margin-top: 0px;
+        }
+        .home-flex .left {
+            width: 60%;
+            height: 100%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+        #home-head {
+            font-size: 0.9rem;
+        }
+        #home-head-title {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        #home-sub-head {
+            font-size: 0.9rem;
+        }
+        #home-para {
+            width: 70%;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        #home-price-flex :nth-child(2) {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+        }
+        #home-cart-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1rem;
+            width: 50%;
+            border: none;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 9999px;
+            cursor: pointer;
+            margin-bottom: 4rem;
+        }
+        #home-cart-icon {
+            width: 1.2rem;
+            filter: invert();
+        }
+        #home-coffees-hover {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 0.7rem;
+            background-color: var(--accent-color);
+            border-radius: 0px 40px 40px 0px;
+            
+        }
+        .coffee-hover {
+            height: 110px;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .coffee-hover:hover {
+            transform: translateY(-10px) scale(1.5);
+            border-radius: 50%;
+            transition: all 0.9s ease;
+        }
+
+
+        .home-flex .right {
+            width: 40%;
+        }
+        #beans-bg {
+            position: absolute;
+            z-index: 10;;
+            height: 100%;
+            width: 100%;
+            right: 0;
+            object-fit: contain;
+        }
+        #home-left-img-base {
+            background-color: var(--accent-color);
+            height: 100%;
+            width: 60%;
+            position: absolute;
+            right: 0;
+            z-index: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            border-radius: 50px 0px 0px 50px;
+
+        }
+        #home-left-img-base h1 {
+            font-size: 4rem;
+        }
+        #home-left-img-base h1:nth-child(2) {
+            transform: rotate(-90deg) translateY(-50px);
+            opacity: 0.5;
+        }
+        #coffee-home-big{
+            position: absolute;
+            height: 70%;
+            right: 60%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+        .branches-grid { 
+            grid-template-columns: repeat(2, 1fr); margin-left: 0; 
+        }
+        .side-title { 
+            writing-mode: horizontal-tb; transform: rotate(0); width: 100%; margin-bottom: 1rem; 
+        }
+        .branches { 
+            flex-direction: column; 
+        }
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="home">
+        <nav>
+    <img src="https://pngimg.com/uploads/starbucks/small/starbucks_PNG14.png" alt="starbucks-logo" id="logo" height="56rem">
+
+    <ul id="links">
+        <li>Home</li>
+        <li>Menu</li>
+        <li>Rewards</li>
+        <li>Gift Cards</li>
+    </ul>
+
+    <div id="nav-buttons">
+        <button id="cart-btn"><img src="https://cdn-icons-png.flaticon.com/512/3721/3721818.png" alt="basket-icon" id="cart-icon">Cart</button>
+        <img src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA4L2pvYjExMjAtZWxlbWVudC0xOS5wbmc.png" alt="profile-photo" id="profile-photo">
+    </div>
+</nav>
+        <div class="home-flex">
+            
+            <div class="left">
+                <h2 id="home-head">WHERE EVERY CUP TELLS A STORY</h2>
+                <h1 id="home-head-title">WHAT'S <span>YOURS</span>?</h1>
+                <h4 id="home-sub-head">FRAPPUCCINO CAFE DELIGHT</h4>
+                <p id="home-para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae, saepe eos! Magnam maxime minima voluptate labore distinctio, ullam veniam voluptatum dolorem necessitatibus harum corrupti dolores. Rem nihil nisi minus. Fuga cumque expedita repellendus? Recusandae saepe quisquam odio, obcaecati aliquid earum?</p>
+                <div id="home-price-flex">
+                    <h3>Best Deal: </h3>
+                    <h3>$4.99</h3>
+                </div>
+                <button id="home-cart-btn"><img src="https://cdn-icons-png.flaticon.com/512/3721/3721818.png" alt="basket-icon" id="home-cart-icon">Add to Cart</button>
+                <div id="home-coffees-hover">
+                    <img src="https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee-PNG.png" alt="coffee" class="coffee-hover">
+                    <img src="https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee.png" alt="coffee" class="coffee-hover">
+                    <img src="https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee-PNG-Free-Download.png" alt="coffee" class="coffee-hover">
+                </div>
+            </div>
+            <div class="right">
+                <img src="https://freepngimg.com/save/10743-coffee-beans-png/1596x1010" alt="beans" id="beans-bg">
+                <div id="home-left-img-base">
+                    <img src="https://www.pngkey.com/png/full/106-1060314_15-most-amazing-starbucks-drinks-around-the-world.png" alt="coffee" id="coffee-home-big">
+                    <h1>FRAPUCCINO</h1>
+                    <h1>FRAPUCCINO</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p2">
+        <img src="https://freepngimg.com/download/coffee/62115-tea-coffee-drink-starbucks-latte-free-download-image.png" alt="">
+        <div class="p2-content">
+            <h1 id="p2-head">UN<span>MATC</span>HED</h1>
+            <h1 id="p2-head2">QU<span>ALIT</span>Y</h1>
+        </div>
+        <div class="p2-content-base">
+            <h1 id="p2-head">UNMATCHED</h1>
+            <h1 id="p2-head2">QUALITY</h1>
+        </div>
+        
+    </div>
+    <section class="popular-section">
+        <div class="popular-header">
+            <span class="popular-tag">POPULAR</span>
+        </div>
+        <div class="product-grid">
+            <div class="product-card featured">
+                <img src="https://www.pngkey.com/png/full/106-1060314_15-most-amazing-starbucks-drinks-around-the-world.png" alt="Mocha">
+                <div class="card-info">
+                    <h3>MOCHA BREW</h3>
+                    
+                    <p>"A rich, velvety fusion of deep espresso and decadent dark chocolate, topped with a smooth crema."</p>
+                    <button class="add-btn">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee-PNG-Free-Download.png" alt="Vanilla Latte">
+                <div class="card-info">
+                    <h3>VANILLA LATTE</h3>
+                    <p>"Pure Madagascar vanilla bean syrup meets our signature blonde roast for a light, sweet, and airy finish."</p>
+                    <button class="add-btn">ADD TO CART</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee.png" alt="Vanilla Latte">
+                <div class="card-info">
+                    <h3>VANILLA LATTE</h3>
+                    <p>"The timeless favorite—perfectly steamed milk poured over rich espresso with just a hint of creamy sweetness."</p>
+                    <button class="add-btn">ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="menu-carousel">
+    <div class="category-tabs">
+        <div class="tab active" data-category="DRINKS">DRINKS</div>
+        <div class="tab" data-category="FOOD">FOOD</div>
+        <div class="tab" data-category="AT HOME">AT HOME</div>
+        <div class="tab" data-category="MERCH">MERCH</div>
+    </div>
+
+    <div class="menu-container">
+        <button class="nav-arrow left" onclick="moveSlide(-1)">&#10094;</button>
+        
+        <div class="menu-viewport">
+            <div class="menu-slider" id="productSlider">
+                </div>
+        </div>
+        
+        <button class="nav-arrow right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+</section>
+    <section class="branches">
+    <div class="side-title">OUR BRANCHES</div>
+    <div class="branches-grid">
+        <div class="branch-item">
+            <img src="https://www.tangledupinfood.com/sites/default/files/coffee_counter_starbucks_reserve_roastery_seattle.jpg" alt="Seattle Branch" class="branch-img">
+            <div class="branch-text">
+                <h4>SEATTLE</h4>
+                <p>1912 Pike Place,<br>Seattle, WA 98101</p>
+            </div>
+        </div>
+        <div class="branch-item">
+            <img src="https://manhattanwestnyc.com/wp-content/uploads/2024/05/Approved-Exterior-Photo-from-Design-2.9.22-scaled.jpg" alt="New York Branch" class="branch-img">
+            <div class="branch-text">
+                <h4>NEW YORK</h4>
+                <p>1552 Broadway,<br>New York, NY 10036</p>
+            </div>
+        </div>
+        <div class="branch-item">
+            <img src="https://imageio.forbes.com/specials-images/dam/imageserve/621694298/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds" alt="London Branch" class="branch-img">
+            <div class="branch-text">
+                <h4>LONDON</h4>
+                <p>9-12 St Martin's Ln,<br>London WC2N 4AS, UK</p>
+            </div>
+        </div>
+        <div class="branch-item">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/fb/c9/cd/sb.jpg?w=900&h=500&s=1" alt="Tokyo Branch" class="branch-img">
+            <div class="branch-text">
+                <h4>TOKYO</h4>
+                <p>2-19-23 Aobadai, Meguro,<br>Tokyo 153-0042, Japan</p>
+            </div>
+        </div>
+        <div class="branch-item">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/22/13/3e/f6/l-interieur-du-starbucks.jpg?w=1200&h=1200&s=1" alt="Paris Branch" class="branch-img">
+            <div class="branch-text">
+                <h4>PARIS</h4>
+                <p>3 Boulevard des Capucines,<br>75002 Paris, France</p>
+            </div>
+        </div>
+        <div class="branch-item">
+            <img src="https://cdn.prod.website-files.com/6580c76ebe70d1634558a7c2/67bf3d2b2f6a89da40b6a519_Chicago-Roastery.jpg" alt="Chicago Branch" class="branch-img">
+            <div class="branch-text">
+                <h4>CHICAGO</h4>
+                <p>646 Michigan Ave,<br>Chicago, IL 60611</p>
+            </div>
+        </div>
+        <div class="branch-item">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/fc/2e/75/caption.jpg?w=1200&h=1200&s=1" alt="Dubai Branch" class="branch-img">
+            <div class="branch-text">
+                <h4>DUBAI</h4>
+                <p>Al Seef St, Al Hamriya,<br>Dubai, UAE</p>
+            </div>
+        </div>
+        <div class="branch-item">
+            <img src="https://d34twccn1ivjr2.cloudfront.net/4x70sm6brglsd84kwluhek9bcbjj" alt="Milan Branch" class="branch-img">
+            <div class="branch-text">
+                <h4>MILAN</h4>
+                <p>Piazza Cordusio, 3,<br>20123 Milano MI, Italy</p>
+            </div>
+        </div>
+        <div class="branch-item">
+            <img src="https://bioplanet.com.mx/www/wp-content/uploads/2025/07/SBX-Ahau-Tulum-1-960x800.jpg" alt="Mexico City Branch" class="branch-img">
+            <div class="branch-text">
+                <h4>MEXICO CITY</h4>
+                <p>Av. Paseo de la Reforma 243,<br>06500 CDMX, Mexico</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer class="main-footer">
+        <div class="scrolling-text">
+            STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS &nbsp; STARBUCKS
+        </div>
+        
+        <div class="footer-flex">
+            <div class="contact-box">
+                <h3>CONTACT</h3>
+                <form>
+                    <label>NAME</label>
+                    <input type="text" placeholder="ENTER YOUR NAME">
+                    <label>EMAIL</label>
+                    <input type="email" placeholder="ENTER YOUR EMAIL">
+                    <button type="submit" class="submit-btn">SUBMIT</button>
+                </form>
+            </div>
+            <div class="thanks-box">
+                <h2>THANK YOU!</h2>
+                <p>Hang tight! We're coming your way soon!</p>
+                <div class="arrow-circle">→</div>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <div class="brand">
+                <img src="https://pngimg.com/uploads/starbucks/small/starbucks_PNG14.png">
+                <p>Beat the heat with a chilled coffee treat!</p>
+            </div>
+            <div class="subscribe">
+                <p>SUBSCRIBE</p>
+                <div class="sub-input">
+                    <input type="text" placeholder="ENTER YOUR EMAIL">
+                    <button>→</button>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, perspiciatis voluptates est vel numquam reiciendis assumenda. Expedita quis omnis officia incidunt alias corporis quidem debitis ratione facilis hic. Delectus accusantium quos odit aut magni. Soluta nisi possimus ullam repellendus cupiditate?</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+// 1. Centralized Data Store
+const menuData = {
+    DRINKS: [
+        { name: "Caffe Mocha", img: "https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee-PNG.png", cal: 190 },
+        { name: "Caramel Macchiato", img: "https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee-PNG-Free-Download.png", cal: 240 },
+        { name: "Java Chip Frap", img: "https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee.png", cal: 320 },
+        { name: "White Mocha", img: "https://www.pngmart.com/files/22/Starbucks-Coffee-PNG-Transparent.png", cal: 280 },
+        { name: "Pink Drink", img: "https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee-PNG.png", cal: 140 },
+        { name: "Iced Americano", img: "https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee-PNG-Free-Download.png", cal: 15 },
+        { name: "Nitro Cold Brew", img: "https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee.png", cal: 5 },
+        { name: "Chai Latte", img: "https://www.pngarts.com/files/11/Sweet-Iced-Coffee-Free-PNG-Image.png", cal: 210 },
+        { name: "Flat White", img: "https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee-PNG.png", cal: 170 },
+        { name: "Espresso Shot", img: "https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee-PNG-Free-Download.png", cal: 5 }
+    ],
+    FOOD: [
+        { name: "Butter Croissant", img: "https://pngimg.com/uploads/sandwich/sandwich_PNG48.png", cal: 260 },
+        { name: "Egg Sandwich", img: "https://pngimg.com/uploads/sandwich/sandwich_PNG48.png", cal: 480 },
+        { name: "Blueberry Muffin", img: "https://pngimg.com/uploads/sandwich/sandwich_PNG48.png", cal: 340 },
+        { name: "Cheese Danish", img: "https://pngimg.com/uploads/sandwich/sandwich_PNG48.png", cal: 290 },
+        { name: "Cake Pop", img: "https://pngimg.com/uploads/sandwich/sandwich_PNG48.png", cal: 160 },
+        { name: "Oatmeal Bowl", img: "https://pngimg.com/uploads/sandwich/sandwich_PNG48.png", cal: 220 },
+        { name: "Avocado Toast", img: "https://pngimg.com/uploads/sandwich/sandwich_PNG48.png", cal: 310 },
+        { name: "Ham & Swiss", img: "https://pngimg.com/uploads/sandwich/sandwich_PNG48.png", cal: 380 },
+        { name: "Bagel Cream Cheese", img: "https://pngimg.com/uploads/sandwich/sandwich_PNG48.png", cal: 250 },
+        { name: "Protein Box", img: "https://pngimg.com/uploads/sandwich/sandwich_PNG48.png", cal: 420 }
+    ],
+    "AT HOME": Array(10).fill({ name: "Home Blend", img: "https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee-PNG.png", cal: 0 }),
+    MERCH: Array(10).fill({ name: "Matte Tumbler", img: "https://www.pngall.com/wp-content/uploads/4/Starbucks-Coffee-PNG-Free-Download.png", cal: 0 })
+};
+
+// 2. State Management
+let currentCategory = "DRINKS";
+let currentIndex = 0;
+const VISIBLE_ITEMS = 4;
+const CARD_WIDTH = 275; // Card width (250) + Gap (25)
+
+const menuSlider = document.getElementById('productSlider');
+const tabs = document.querySelectorAll('.tab');
+
+// 3. Core Logic
+const initCarousel = () => {
+    renderMenu();
+    setupEventListeners();
+};
+
+const renderMenu = () => {
+    const items = menuData[currentCategory];
+    
+    menuSlider.innerHTML = items.map((item, index) => `
+        <div class="menu-item ${index === currentIndex ? 'active-slide' : ''}">
+            <img src="${item.img}" alt="${item.name}">
+            <h3>${item.name.toUpperCase()}</h3>
+            <div class="options">
+                <span>Energy <i>${item.cal} kcal</i></span>
+                <span>Size <i>Standard</i></span>
+            </div>
+            <button class="card-add-btn">ADD TO CART</button>
+        </div>
+    `).join('');
+    
+    updatePosition();
+};
+
+const updatePosition = () => {
+    menuSlider.style.transform = `translateX(${-currentIndex * CARD_WIDTH}px)`;
+    
+    // Update active class on elements for the scaling effect
+    const allItems = document.querySelectorAll('.menu-item');
+    allItems.forEach((item, idx) => {
+        item.classList.toggle('active-slide', idx === currentIndex);
+    });
+};
+
+function moveSlide(direction) {
+    const totalItems = menuData[currentCategory].length;
+    const maxIndex = totalItems - VISIBLE_ITEMS;
+
+    currentIndex += direction;
+
+    // Boundary Checks
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+    updatePosition();
+}
+
+const setupEventListeners = () => {
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            // UI Toggle
+            document.querySelector('.tab.active').classList.remove('active');
+            tab.classList.add('active');
+
+            // Data Update
+            currentCategory = tab.dataset.category;
+            currentIndex = 0; // Reset scroll on category change
+            renderMenu();
+        });
+    });
+};
+
+// Start the engine
+initCarousel();
+
+</script>
+</body>
+</html>
